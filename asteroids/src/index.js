@@ -7,16 +7,18 @@ const canvasEl = document.getElementById("canvas");
 canvasEl.width = 500;
 canvasEl.height = 500;
 
-const ctx = canvasEl.getContent("2d");
+const ctx = canvasEl.getContext("2d");
 
 const mo = new MovingObject({
-  pos: [30, 30],
-  vel: [10, 10],
-  radius: 5,
+  pos: [250, 250],
+  vel: [100, 100],
+  radius: 100,
   color: "#00FF00",
 });
 
-// mo.draw(ctx);
+mo.draw(ctx);
+mo.move(ctx);
+mo.move(ctx);
 
 // create moving object instance
 // invoke draw method - pass ctx as argument

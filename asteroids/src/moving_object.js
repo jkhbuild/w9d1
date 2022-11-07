@@ -8,10 +8,16 @@ function MovingObject(options) {
 module.exports = MovingObject;
 
 MovingObject.prototype.draw = function (ctx) {
-  ctx.fillStyle = "blue";
   ctx.beginPath();
-  ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+  ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);
   ctx.stroke();
+  ctx.fillStyle = this.color;
+  ctx.fill();
   // take data from movingobject invoked upon
   // make drawing on ctx
+};
+
+MovingObject.prototype.move = function (ctx) {
+  this.pos[0] += this.vel[0];
+  this.pos[1] += this.vel[1];
 };
